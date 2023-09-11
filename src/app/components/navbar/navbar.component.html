@@ -1,0 +1,121 @@
+<nav class="bg-sky-700 border-gray-200 px-6 shadow-md">
+  <div class="flex flex-wrap justify-between items-center">
+    <div class="flex items-center">
+      <a routerLink="/">
+        <img
+          loading="lazy"
+          class="w-20 mr-8"
+          src="/assets/images/logos/logo-gradient-white-trello.svg"
+          alt="logo"
+        />
+      </a>
+      <div class="flex items-center">
+        <ul class="flex items-center space-x-2 text-sm font-medium">
+          <li>
+            <a class="block py-3 px-4 text-white">Workspaces</a>
+          </li>
+          <li>
+            <a class="block py-3 px-4 text-white">Recent</a>
+          </li>
+          <li>
+            <app-btn typeBtn="button" color="sky">Create</app-btn>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <button
+        type="button"
+        class="flex rounded-full"
+        aria-expanded="false"
+        type="button"
+        (click)="isOpen = !isOpen"
+        cdkOverlayOrigin
+        #menuOverlay="cdkOverlayOrigin"
+      >
+        <img
+          class="w-8 h-8 rounded-full"
+          src="https://avatars.githubusercontent.com/u/73410324?w=400&h=400"
+          alt="user photo"
+        />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="menuOverlay"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayHasBackdrop]="true"
+	(backdropClick)="isOpen = false"
+	(detach)="isOpen = false"
+>
+<div
+class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+>
+<div class="py-3 px-4 flex justify-between">
+  <span class="block text-sm text-center text-gray-900">Account</span>
+  <button (click)="isOpen = !isOpen" class="block text-sm text-gray-900">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+  </button>
+</div>
+<div class="py-3 px-4 flex items-center space-x-4">
+  <img
+    class="w-10 h-10 rounded-full"
+    src="https://avatars.githubusercontent.com/u/73410324?w=400&h=400"
+    alt=""
+  />
+  <div class="space-y-1">
+    <div>Carlos Dugarte</div>
+    <div class="text-sm text-gray-500">charly@gmail.com</div>
+  </div>
+</div>
+<ul class="py-1" >
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+      >Profile</a
+    >
+  </li>
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+      >Activity</a
+    >
+  </li>
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+      >Cards</a
+    >
+  </li>
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+      >Settings</a
+    >
+  </li>
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+      >Sign out</a
+    >
+  </li>
+</ul>
+<ul class="py-1">
+  <li>
+    <a
+      href="#"
+      class="block py-2 px-4 text-sm text-gray-700"
+      >Log out</a
+    >
+  </li>
+</ul>
+</div>
+</ng-template>
