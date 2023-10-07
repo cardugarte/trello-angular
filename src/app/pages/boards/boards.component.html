@@ -1,2 +1,30 @@
 <app-navbar></app-navbar>
-<h1>Boards Page</h1>
+<div class="flex mt-10">
+  <aside class="ml-20 w-60">
+    <ul>
+      <li class="p-3 hover:text-blue-700 hover:bg-blue-100 hover:rounded">
+        <fa-icon class="mr-2" [icon]="faTrello"></fa-icon>
+        <a href="">Boards</a>
+      </li>
+      <li class="p-3 hover:text-blue-700 hover:bg-blue-100 hover:rounded">
+        <fa-icon class="mr-2" [icon]="faFlipboard"></fa-icon>
+        <a href="">Templates</a>
+      </li>
+      <li class="p-3 hover:text-blue-700 hover:bg-blue-100 hover:rounded">
+        <fa-icon class="mr-2" [icon]="faWaveSquare"></fa-icon>
+        <a href="">Home</a>
+      </li>
+    </ul>
+  </aside>
+  <section class="ml-10">
+    <div>
+      <div class="flex mb-3">
+        <fa-icon class="mr-2" [icon]="faClock"></fa-icon>
+        <h2 class="font-bold">Recently viewed</h2>
+      </div>
+      <div class="bg-blue-800 w-64 h-32 rounded p-2">
+        <h3 class="text-white font-semibold">Demo</h3>
+      </div>
+    </div>
+  </section>
+</div>
